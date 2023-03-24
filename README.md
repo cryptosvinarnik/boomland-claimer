@@ -5,4 +5,4 @@
 - Install python 3.10
 - Install dependencies: <code>pip install -r requirements.txt</code>
 - Fill in RPC URL and file with private keys
-- Run script: <code>python main.py>/code>
+- Run script: <code>python main.py</code>
