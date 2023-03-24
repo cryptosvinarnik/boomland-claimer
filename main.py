@@ -24,12 +24,15 @@ def send_tx(w3: Web3, account: Account, contract_address, data) -> str:
         "to": contract_address,
         "from": account.address,
         "value": 0,
-        "gas": 60_000,
+        "gas": 100_000,
         "gasPrice": w3.eth.gas_price,
         "data": data
     }
 
-    w3.eth.estimate_gas(tx)
+    gas = w3.eth.estimate_gas(tx)
+
+    if gas > tx["gas"]:
+        tx["gas"] = gas
 
     signed_tx = account.sign_transaction(tx)
     tx_hash = w3.eth.send_raw_transaction(signed_tx.rawTransaction).hex()
