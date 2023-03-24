@@ -44,8 +44,7 @@ def main():
         logger.error("Can't connect to RPC")
         return
 
-    BOOMLAND_CONTRACT = Web3.toChecksumAddress(
-        "0x3a1f862d8323138f14494f9fb50c537906b12b81")
+    BOOMLAND_CONTRACT = Web3.toChecksumAddress("0x3a1f862d8323138f14494f9fb50c537906b12b81")
     BOOMLAND_CLAIM_DATA = "0x359cf2b7"
 
     private_keys = open(input("File with private keys >> ")).read().splitlines()
